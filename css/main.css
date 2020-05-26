@@ -278,18 +278,27 @@ textarea {
 
 /* CUSTOM CSS */
 body {
+  background-color: #C8C7AB;
   height: 100%;
 }
 
 .main-animation-container {
+
+
   height: 100%;
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.circle-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .animation {
-  background-color: grey;
+  background-color: #141f2d;
   width: 15vw;
   height: 15vw;
   border-radius: 50%;
@@ -300,6 +309,23 @@ body {
   transform: scale(1);
   animation: pulse 2s infinite;
 }
+
+.vertical-container1, .vertical-container2 {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.vertical-container1 *, .vertical-container2 * {
+  height: 10vw;
+  width: 10vw;
+}
+
+
+
 
 /* CUSTOM ANIMATION KEYFRAMES */
 
