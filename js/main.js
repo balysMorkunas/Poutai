@@ -1,15 +1,24 @@
-var circle = document.getElementsByClassName('animation')[0];
-var verticalContainer1 = document.getElementsByClassName('vertical-container1')[0];
-var verticalContainer2 = document.getElementsByClassName('vertical-container2')[0];
-var rectangles = document.getElementsByTagName('rect')
 var strokeColors = ['#071122', '#823329', '#b6f1b5']
-circle.style.cursor = 'pointer';
-circle.onclick = function () {
-  for (i=0; i<rectangles.length; i++) {
-    rectangles[i].style.stroke = strokeColors[Math.floor(Math.random() * strokeColors.length)];
-    console.log(rectangles[i].style.stroke)
-  }
-  verticalContainer1.style.visibility = 'visible'
-  verticalContainer2.style.visibility = 'visible'
+
+$(".vertical-container1").hide()
+$(".vertical-container2").hide()
+$(".back").hide()
+
+$(".animation").click(function () {
+  $('rect').each(function () {
+    $(this).css("stroke", strokeColors[Math.floor(Math.random() * strokeColors.length)])
+  });
   $("#soundtrack").animate({volume: 0}, 2000);
-}
+  $(".vertical-container1").show()
+  $(".vertical-container2").show()
+  $(".back").show()
+  $(this).css("cursor", "default")
+});
+
+$(".back").click(function () {
+  $(".vertical-container1").hide()
+  $(".vertical-container2").hide()
+  $(this).hide()
+  $("#soundtrack").animate({volume: 1}, 2000);
+  $(".animation").css("cursor", "pointer")
+});
