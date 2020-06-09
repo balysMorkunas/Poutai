@@ -282,9 +282,25 @@ body {
   height: 100%;
 }
 
+.back {
+  background-color: #DDE0D2;
+  font-size: 1vw;
+  border-radius: 12px;
+  border: 2px solid black;
+  transition-duration: 0.4s;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.back:hover {
+  background-color: #141f2d;
+  color: white;
+}
+
 .main-animation-container {
-
-
   height: 100%;
   display: flex;
   justify-content: center;
@@ -303,6 +319,7 @@ body {
   height: 15vw;
   border-radius: 50%;
   display: inline-block;
+  cursor: pointer;
 }
 
 .animation:hover {
@@ -313,7 +330,6 @@ body {
 .vertical-container1, .vertical-container2 {
   margin-top: 100px;
   margin-bottom: 100px;
-  visibility: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
